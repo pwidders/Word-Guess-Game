@@ -1,0 +1,28 @@
+body {
+    color: black;
+    background-color: burlywood;
+}
+
+.container-fluid {
+    background-image: url(../images/cartoon-desert-landscape-raster-version-260nw-168619238\ \(1\).jpg);
+    background-position: center;
+    background-size: 65%;
+}
+
+.jumbotron-fluid {
+    background-image: url(../images/sky.jpg)
+}
+
+#game-button {
+    cursor: pointer;
+}
+
+#placeholder-section {
+    background-color: beige;
+}
+
+#placeholders{
+    letter-spacing: 8px;
+    font-size:35px;
+    
+}
