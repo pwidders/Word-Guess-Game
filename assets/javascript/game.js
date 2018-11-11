@@ -1,68 +1,81 @@
 
-// Reference DOM elements
-var _gameButton= document.getElementById('game-button');
+
+// Reference to DOM elements
+var _newGameButton= document.getElementById('game-button');
+
 var _placeHolders= document.getElementById('placeholders');
-var _pickedLetters= document.getElementById('picked-letters');
-var _remainingPicks= document.getElementById('picks-left');
+
+var _pickedletters= document.getElementById('picked-letters');
+
+var _remainingpicks= document.getElementById('picks-left');
+
 var _wins= document.getElementById('wins');
+
 var _losses= document.getElementById('losses');
 
 // Create variables
-var wordchoices = ['horseshoe', 'cowboy', 'saddle','mustang', 'cattle', 'steer', 'ranch','cowgirl', 'rodeo','horseman', 'sheriff', 'whiskey', 'chaps', 'country', 'bulls', 'revolver'];
+var wordchoices = ['horseshoe', 'cowboy', 'saddle','mustang', 'cattleman', 'steer', 'rancher','cowgirl', 'rodeo','horseman', 'sheriff', 'whiskey', 'chaps', 'country', 'bulls', 'revolver', 'ribeye','cowhand','bronco','hillbilly', 'bullfighter', 'longhorns'];
+
 var wins= 0;
+
 var losses= 0;
+
 var picksLeft= 5;
+
 var gameRunning= false;
+
 var chosenWord= '';
+
 var pickedLetterPlaceholder= [];
+
 var usedLetters= [];
+
 var wrongLetters= [];
 
-// Function to reset for new game
+var underScores= [];
+
 function newGame() {
     //clear game info
-    gamerunning= true;
+    gameRunning= true;
     picksLeft= 5;
     pickedWordList= [];
     wrongLetters= []; 
     pickedLetterPlaceholder= []; 
 }
-console.log(newGame)
 
-// Function to pick a new word
-//randomWord= wordchoices[Math.floor(Math.random() * wordchoices.length)]; 
-var randNum = Math.floor(Math.random() * wordchoices.length);
-var chosenWord = word[randNum];
+// Function to pick a new word 
+chosenWord= wordchoices[Math.floor(Math.random() * wordchoices.length)];
 
 console.log(chosenWord)
 
 // For loop to create underscores
 function generateUnderscore () {
-    for (var i = 0 ; i < chosenWord.length; i++) {
-        underScore.push('_');
+    for(var i = 0; i < chosenWord.length; i++) {
+        underScores.push('_');
     }
-    return underScore;
-} 
+    return underScores;
+    }
+    
+    
+// Function to start game from button click 
 
-placeholders.innerText= underScore.join(' ')
+_newGameButton.addEventListener('click', function() {
+    console.log('I hear you')
+    // Function to reset for new game
+    function newGame() {
+    //clear game info
+    gameRunning= true;
+    picksLeft= 5;
+    pickedWordList= [];
+    wrongLetters= []; 
+    pickedLetterPlaceholder= []; 
+    }
+});
 
-console.log(generateUnderscore)
 
 
-//log all info to DOM
-_remainingPicks.textContent = picksLeft;
-_placeHolders.textContent = pickedLetterPlaceholder.join();
-_pickedLetters.textContent = wrongLetters;
 
+    
 
-// Function to record users selection
-
-// Check users answers
-
-// Check win or lose
-
-// Add event listener for new game button
-_gameButton.addEventListener('click', newGame);
-
-//Add onkeyup event to trigger letterGuess
-})
+    
+    
