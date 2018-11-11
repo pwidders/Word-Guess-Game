@@ -48,8 +48,43 @@ $placeholders.textContent = pickedWordPlaceholderArr.join('');
 $guessedLetters.textContent = incorrectLetterBank;
 }
 
+//user letter guess
+function letterGuess(letter) {
+    console.log(letter);
+
+    if (gameRunning === true && guessedLetterBank.indexOf(letter) === -1) { 
+        guessedLetterBank.push(letter);
+   
+    //check if guessed letter is in word
+    for ( var i = 0; i < pickedWord.length; i++) {
+        if (pickedWord[i].toLowerCase === letter.toLowerCase()) {
+            pickedWordPlaceholderArr[i] = pickedWord[i];
+        }
+    }
+
+    $placeholders.textcontent = pickedWordPlaceholderArr.joint('');
+   
+    }
+    else {
+        if (gameRunning ===false) {
+            alert("Please click New Game to start");
+        }
+        else {
+            alert("You've already picked that letter. Please try again.");
+        }
+    }
+}
+    
+
+
 //game button
 $newGameButton.addEventListener('click', newGame);
 
+//onkeyup to trigger letterGuess
+document.onkeyup = function(event) {
+    if (event.keycode >= 65 && event.keycode <= 90) {
+        letterGuess(event.key);
+    }
+}
 
 
