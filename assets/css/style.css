@@ -10,7 +10,8 @@ body {
 }
 
 .jumbotron-fluid {
-    background-image: url(../images/sky.jpg)
+    background-image: url(../images/sky-alternate.png);
+    background-size: cover;
 }
 
 #game-button {
@@ -21,8 +22,11 @@ body {
     background-color: beige;
 }
 
-#placeholders{
+#placeholders {
     letter-spacing: 8px;
     font-size:35px;
-    
+}
+
+.form-group {
+    padding: 10px;
 }
